@@ -1,0 +1,35 @@
+### Starting build.
+# Target: Braidoidvania.ml.depends, tags: { package(tsdl,tsdl_mixer), extension:ml, file:Braidoidvania.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package tsdl,tsdl_mixer -modules Braidoidvania.ml > Braidoidvania.ml.depends
+# Target: objet.mli.depends, tags: { package(tsdl,tsdl_mixer), extension:mli, file:objet.mli, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package tsdl,tsdl_mixer -modules objet.mli > objet.mli.depends # cached
+# Target: objet.cmi, tags: { package(tsdl,tsdl_mixer), byte, compile, extension:mli, file:objet.mli, interf, ocaml, quiet }
+ocamlfind ocamlc -c -package tsdl,tsdl_mixer -o objet.cmi objet.mli # cached
+# Target: readfile.mli.depends, tags: { package(tsdl,tsdl_mixer), extension:mli, file:readfile.mli, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package tsdl,tsdl_mixer -modules readfile.mli > readfile.mli.depends # cached
+# Target: readfile.cmi, tags: { package(tsdl,tsdl_mixer), byte, compile, extension:mli, file:readfile.mli, interf, ocaml, quiet }
+ocamlfind ocamlc -c -package tsdl,tsdl_mixer -o readfile.cmi readfile.mli # cached
+# Target: scene.mli.depends, tags: { package(tsdl,tsdl_mixer), extension:mli, file:scene.mli, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package tsdl,tsdl_mixer -modules scene.mli > scene.mli.depends # cached
+# Target: scene.cmi, tags: { package(tsdl,tsdl_mixer), byte, compile, extension:mli, file:scene.mli, interf, ocaml, quiet }
+ocamlfind ocamlc -c -package tsdl,tsdl_mixer -o scene.cmi scene.mli # cached
+# Target: Braidoidvania.cmo, tags: { package(tsdl,tsdl_mixer), byte, compile, extension:cmo, extension:ml, file:Braidoidvania.cmo, file:Braidoidvania.ml, implem, ocaml, quiet }
+ocamlfind ocamlc -c -package tsdl,tsdl_mixer -o Braidoidvania.cmo Braidoidvania.ml
++ ocamlfind ocamlc -c -package tsdl,tsdl_mixer -o Braidoidvania.cmo Braidoidvania.ml
+File "Braidoidvania.ml", line 76, characters 58-65:
+Warning 21: this statement never returns (or has an unsound type.)
+# Target: objet.ml.depends, tags: { package(tsdl,tsdl_mixer), extension:ml, file:objet.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package tsdl,tsdl_mixer -modules objet.ml > objet.ml.depends # cached
+# Target: objet.cmo, tags: { package(tsdl,tsdl_mixer), byte, compile, extension:cmo, extension:ml, file:objet.cmo, file:objet.ml, implem, ocaml, quiet }
+ocamlfind ocamlc -c -package tsdl,tsdl_mixer -o objet.cmo objet.ml # cached
+# Target: readfile.ml.depends, tags: { package(tsdl,tsdl_mixer), extension:ml, file:readfile.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package tsdl,tsdl_mixer -modules readfile.ml > readfile.ml.depends # cached
+# Target: readfile.cmo, tags: { package(tsdl,tsdl_mixer), byte, compile, extension:cmo, extension:ml, file:readfile.cmo, file:readfile.ml, implem, ocaml, quiet }
+ocamlfind ocamlc -c -package tsdl,tsdl_mixer -o readfile.cmo readfile.ml # cached
+# Target: scene.ml.depends, tags: { package(tsdl,tsdl_mixer), extension:ml, file:scene.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package tsdl,tsdl_mixer -modules scene.ml > scene.ml.depends # cached
+# Target: scene.cmo, tags: { package(tsdl,tsdl_mixer), byte, compile, extension:cmo, extension:ml, file:scene.cmo, file:scene.ml, implem, ocaml, quiet }
+ocamlfind ocamlc -c -package tsdl,tsdl_mixer -o scene.cmo scene.ml # cached
+# Target: Braidoidvania.byte, tags: { package(tsdl,tsdl_mixer), byte, dont_link_with, extension:byte, file:Braidoidvania.byte, link, ocaml, program, quiet }
+ocamlfind ocamlc -linkpkg -package tsdl,tsdl_mixer objet.cmo readfile.cmo scene.cmo Braidoidvania.cmo -o Braidoidvania.byte
+# Compilation successful.
