@@ -1,0 +1,17 @@
+open Readfile;;
+open Objet;;
+type scene;;
+type action_depl = Aucune | Saut_normal | Saut_vers_droite | Saut_vers_gauche | Marcher_droite | Marcher_gauche ;;
+type action = action_depl * bool;;
+val make_scene : string -> scene;;
+val affichage : scene -> unit;;
+val update_scene : scene -> action -> unit;;
+val get_perso : scene -> objet;;
+val clear : scene -> bool;;
+val get_list : scene -> objet list;;
+val get_list_porte : scene -> objet list;;
+val get_perso : scene -> objet;;
+val detect_collision : objet -> objet -> bool;;
+val make_proj : scene -> objet;;
+val perso_a_terre : scene -> bool;;
+val monstre_a_terre : scene -> objet -> bool;;
